@@ -1,4 +1,6 @@
 import React from "react";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from "remark-gfm";
 import TitleBar from "./TitleBar";
 
 class Previewer extends React.Component {
@@ -9,6 +11,10 @@ class Previewer extends React.Component {
     render() {
         return (<div className="sub-window previewer-window">
             <TitleBar title="Previewer" />
+            <div id="preview">
+                <ReactMarkdown remarkPlugins={[remarkGfm]} >{this.props.preview}</ReactMarkdown>
+            </div>
+
         </div>)
     }
 }

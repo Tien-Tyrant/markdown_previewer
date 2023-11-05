@@ -7,9 +7,9 @@ class TitleBar extends React.Component {
 
     render() {
         return <div className="title-bar">
-            <i className="logo">logo</i>
-            <span>{this.props.title}</span>
-            <i className="expand-icon">expand</i>
+            <i className="fa fa-tint"></i>
+            {this.props.title}
+            <i className="fa fa-arrows-alt"></i>
         </div>
     }
 }
