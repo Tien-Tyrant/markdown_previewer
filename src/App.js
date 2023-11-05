@@ -12,6 +12,7 @@ class App extends React.Component {
       markdown: this.initialEdit,
     }
     this.handleChange = this.handleChange.bind(this);
+    this.windowSizeChange = this.windowSizeChange.bind(this);
   }
 
   handleChange(content) {
@@ -20,11 +21,15 @@ class App extends React.Component {
     })
   }
 
+  windowSizeChange(windowName) {
+
+  }
+
   render() {
     return (
       <div className="App">
-        <Editor edit={this.state.markdown} callback={this.handleChange}/>
-        <Previewer preview={this.state.markdown} />
+        <Editor edit={this.state.markdown} callback={this.handleChange} windowSizeChange={this.windowSizeChange('editor-window')} />
+        <Previewer preview={this.state.markdown} windowSizeChange={this.windowSizeChange('preview-window')} />
       </div>
     );
   }
