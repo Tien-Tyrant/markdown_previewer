@@ -58,7 +58,6 @@ code {
 textarea {
   width: 100%;
   background-color: #c0d8d8;
-  width: 99%;
   min-height: 200px;
   margin-bottom: -5px;
   resize: vertical;
