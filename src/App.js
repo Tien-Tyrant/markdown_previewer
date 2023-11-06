@@ -22,14 +22,14 @@ class App extends React.Component {
   }
 
   windowSizeChange(windowName) {
-
+    console.log(`clicked from ${windowName}`);
   }
 
   render() {
     return (
       <div className="App">
-        <Editor edit={this.state.markdown} callback={this.handleChange} windowSizeChange={this.windowSizeChange('editor-window')} />
-        <Previewer preview={this.state.markdown} windowSizeChange={this.windowSizeChange('preview-window')} />
+        <Editor edit={this.state.markdown} callback={this.handleChange} windowSizeChange={() => this.windowSizeChange('editor-window')} />
+        <Previewer preview={this.state.markdown} windowSizeChange={() => this.windowSizeChange('preview-window')} />
       </div>
     );
   }

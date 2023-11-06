@@ -6,16 +6,11 @@ import TitleBar from "./TitleBar";
 class Previewer extends React.Component {
     constructor(props) {
         super(props)
-        this.click = this.click.bind(this)
-    }
-
-    click() {
-        this.props.windowSizeChange();
     }
 
     render() {
-        return (<div className="sub-window previewer-window">
-            <TitleBar title="Previewer" click={this.click}/>
+        return (<div className="sub-window preview-window">
+            <TitleBar title="Previewer" click={this.props.windowSizeChange} />
             <div id="preview">
                 <ReactMarkdown remarkPlugins={[remarkGfm]} >{this.props.preview}</ReactMarkdown>
             </div>

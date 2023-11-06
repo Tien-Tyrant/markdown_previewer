@@ -5,7 +5,6 @@ class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this)
-        this.click = this.click.bind(this);
     }
 
     handleChange(e) {
@@ -14,13 +13,9 @@ class Editor extends React.Component {
         }
     }
 
-    click() {
-        this.props.windowSizeChange();
-    }
-
     render() {
         return (<div className='sub-window editor-window'>
-            <TitleBar title="Editor" click={this.click} />
+            <TitleBar title="Editor" click={this.props.windowSizeChange} />
             <textarea type="text" id="editor" onChange={this.handleChange}>{this.props.edit}</textarea>
         </div>);
     }

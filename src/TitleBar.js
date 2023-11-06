@@ -12,9 +12,7 @@ class TitleBar extends React.Component {
 
     render() {
         return <div className="title-bar">
-            <i className="fa fa-tint"></i>
-            {this.props.title}
-            <i className="fa fa-arrows-alt" onClick={this.click}></i>
+            <i className="fa fa-tint"></i>{this.props.title}<i className="fa fa-arrows-alt" onClick={this.click}></i>
         </div>
     }
 }
