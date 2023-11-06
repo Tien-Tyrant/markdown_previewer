@@ -4,10 +4,6 @@ import remarkGfm from "remark-gfm";
 import TitleBar from "./TitleBar";
 
 class Previewer extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         return (<div className={`preview-window ${this.props.windowState}`}>
             <TitleBar title="Previewer" click={this.props.windowSizeChange} />
