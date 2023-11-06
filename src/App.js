@@ -10,6 +10,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       markdown: this.initialEdit,
+      editorWindowState: '',
+      previewWindowState: ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.windowSizeChange = this.windowSizeChange.bind(this);
@@ -23,13 +25,24 @@ class App extends React.Component {
 
   windowSizeChange(windowName) {
     console.log(`clicked from ${windowName}`);
+    this.setState(state => ({
+      editorWindowState: this.nextState(state.editorWindowState, windowName == 'editor-window'),
+      previewWindowState: this.nextState(state.previewWindowState, windowName == 'preview-window'),
+    }))
+  }
+
+  nextState(currState, isCurrentWindow) {
+    if (currState == 'hide' || currState == 'maximize') {
+      return '';
+    }
+    return isCurrentWindow ? 'maximize' : 'hide'
   }
 
   render() {
     return (
       <div className="App">
-        <Editor edit={this.state.markdown} callback={this.handleChange} windowSizeChange={() => this.windowSizeChange('editor-window')} />
-        <Previewer preview={this.state.markdown} windowSizeChange={() => this.windowSizeChange('preview-window')} />
+        <Editor edit={this.state.markdown} callback={this.handleChange} windowSizeChange={() => this.windowSizeChange('editor-window')} windowState={this.state.editorWindowState} />
+        <Previewer preview={this.state.markdown} windowSizeChange={() => this.windowSizeChange('preview-window')} windowState={this.state.previewWindowState} />
       </div>
     );
   }

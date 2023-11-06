@@ -9,7 +9,7 @@ class Previewer extends React.Component {
     }
 
     render() {
-        return (<div className="sub-window preview-window">
+        return (<div className={`preview-window ${this.props.windowState}`}>
             <TitleBar title="Previewer" click={this.props.windowSizeChange} />
             <div id="preview">
                 <ReactMarkdown remarkPlugins={[remarkGfm]} >{this.props.preview}</ReactMarkdown>

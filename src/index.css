@@ -32,18 +32,31 @@ code {
   width: 100vw;
 }
 
-.sub-window {
+.editor-window {
   margin-top: 20px;
   max-width: 600px;
+  margin: 1.25rem auto;
+}
+.editor-window textarea {
+  height
+  : 466px;
+}
+.editor-window.maximize {
+  margin-top: 20px;
+  max-width: 600px;
+  margin: 1.25rem auto;
 }
 
-.editor-window {
-  margin: 1.25rem auto;
+.editor-window.maximize textarea {
+  min-height: 100vh;
+}
+
+.hide {
+  display: none;
 }
 
 textarea {
   width: 100%;
-  height: 466px;
   background-color: #c0d8d8;
   width: 99%;
   min-height: 200px;
@@ -60,7 +73,6 @@ textarea {
   min-height: 800px;
   max-width: 800px;
   margin: 1.25rem auto;
-  min-height: 200px;
   overflow-wrap: break-word;
   box-shadow: 1px 1px 10px 2px #3a5f5f;
   background-color: #c0d8d8;
@@ -103,6 +115,7 @@ textarea {
 #preview table {
   border-collapse: collapse;
 }
+
 #preview td,
 #preview th {
   border: 2px solid #224b4b;
@@ -114,7 +127,6 @@ textarea {
   max-width: 90%;
   margin: 2rem auto;
 }
-
 
 .title-bar{
   display: flex;

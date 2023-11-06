@@ -14,7 +14,7 @@ class Editor extends React.Component {
     }
 
     render() {
-        return (<div className='sub-window editor-window'>
+        return (<div className={`editor-window ${this.props.windowState}`}>
             <TitleBar title="Editor" click={this.props.windowSizeChange} />
             <textarea type="text" id="editor" onChange={this.handleChange}>{this.props.edit}</textarea>
         </div>);
